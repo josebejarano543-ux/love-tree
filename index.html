@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Para Ti ❤️</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Pantalla inicial -->
+  <div class="intro" id="intro">
+
+    <h1>Una pequeña sorpresa para ti ❤️</h1>
+
+    <p>
+      Presiona el botón para abrirla
+    </p>
+
+    <button id="startBtn">
+      Abrir regalo
+    </button>
+
+  </div>
+
+  <!-- Música -->
+  <audio id="song" loop>
+    <source src="music/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Contenido principal -->
+  <main class="card hidden" id="card">
+
+    <!-- Texto -->
+    <section class="text">
+
+      <h1>Para la niña más hermosa ❤️</h1>
+
+      <p>
+        No sé exactamente cómo explicarlo,
+        pero contigo aprendí que los pequeños momentos
+        también pueden sentirse especiales.
+        Incluso un simple día se vuelve bonito
+        cuando estás presente en él.
+      </p>
+
+      <p>
+        Hice esta pequeña sorpresa porque quería que supieras
+        lo importante que eres para mí,
+        y porque mereces recordar lo increíble que eres,
+        incluso en los días donde lo olvides.
+      </p>
+
+      <p>
+        Gracias por tu sonrisa,
+        por tu forma de ser,
+        y por hacer que mi corazón encuentre paz contigo.
+      </p>
+
+      <h2>— I Love You Babe ❤️</h2>
+
+      <div class="counter">
+
+        <span>
+          Y quiero que sepas algo:
+          Mi amor por ti comenzó hace...
+        </span>
+
+        <strong id="time"></strong>
+
+      </div>
+
+      <!-- BOTÓN DE MENSAJE -->
+      <a
+        class="message-btn"
+        href="sms:+18015003993?&body=Vi%20tu%20sorpresa%20y%20me%20encantó%20❤️"
+      >
+        Enviarme un mensaje ❤️
+      </a>
+
+    </section>
+
+    <!-- Árbol -->
+    <section class="tree-area">
+      <canvas id="tree"></canvas>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
