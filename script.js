@@ -75,7 +75,7 @@ function createHearts() {
       originalX: x,
       originalY: y,
       size: isMobile
-        ? Math.random() * 1.8 + 1.8
+        ? Math.random() * 2.8 + 2.8
         : Math.random() * 3.5 + 2.8,
       color: colors[Math.floor(Math.random() * colors.length)],
       offset: Math.random() * 100,
