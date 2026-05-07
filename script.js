@@ -56,10 +56,10 @@ function createHearts() {
   const isMobile = window.innerWidth <= 600;
 
   const centerX = canvas.width / 2;
-  const centerY = isMobile ? canvas.height / 2 - 45 : canvas.height / 2 - 70;
+  const centerY = isMobile ? canvas.height / 2 - 40 : canvas.height / 2 - 70;
 
-  const scale = isMobile ? 9.2 : 13;
-  const totalHearts = isMobile ? 520 : 650;
+  const scale = isMobile ? 7.8 : 13;
+  const totalHearts = isMobile ? 340 : 650;
 
   for (let i = 0; i < totalHearts; i++) {
     const t = Math.random() * Math.PI * 2;
@@ -75,11 +75,11 @@ function createHearts() {
       originalX: x,
       originalY: y,
       size: isMobile
-        ? Math.random() * 2.5 + 2.2
+        ? Math.random() * 1.8 + 1.8
         : Math.random() * 3.5 + 2.8,
       color: colors[Math.floor(Math.random() * colors.length)],
       offset: Math.random() * 100,
-      falling: i % (isMobile ? 14 : 8) === 0
+      falling: i % (isMobile ? 20 : 8) === 0
     });
   }
 }
@@ -107,16 +107,16 @@ function drawTrunk() {
   const isMobile = window.innerWidth <= 600;
 
   const x = canvas.width / 2;
-  const top = isMobile ? canvas.height / 2 + 45 : canvas.height / 2 + 70;
+  const top = isMobile ? canvas.height / 2 + 42 : canvas.height / 2 + 70;
   const bottom = canvas.height - 20;
 
   ctx.fillStyle = "#00a884";
 
   ctx.beginPath();
-  ctx.moveTo(x - (isMobile ? 18 : 25), bottom);
-  ctx.lineTo(x + (isMobile ? 18 : 25), bottom);
-  ctx.lineTo(x + (isMobile ? 8 : 10), top);
-  ctx.lineTo(x - (isMobile ? 8 : 10), top);
+  ctx.moveTo(x - (isMobile ? 17 : 25), bottom);
+  ctx.lineTo(x + (isMobile ? 17 : 25), bottom);
+  ctx.lineTo(x + (isMobile ? 7 : 10), top);
+  ctx.lineTo(x - (isMobile ? 7 : 10), top);
   ctx.closePath();
 
   ctx.fill();
@@ -130,19 +130,19 @@ function animate() {
   drawTrunk();
 
   hearts.forEach((h) => {
-    const waveX = Math.sin((frame + h.offset) * 0.035) * (isMobile ? 1.4 : 4);
-    const waveY = Math.cos((frame + h.offset) * 0.035) * (isMobile ? 1.4 : 4);
+    const waveX = Math.sin((frame + h.offset) * 0.012) * (isMobile ? 0.4 : 4);
+    const waveY = Math.cos((frame + h.offset) * 0.012) * (isMobile ? 0.4 : 4);
 
     if (h.falling) {
-      h.y += isMobile ? 0.35 : 1.2;
-      h.x += Math.sin(frame * 0.025 + h.offset) * (isMobile ? 0.25 : 0.8);
+      h.y += isMobile ? 0.08 : 1.2;
+      h.x += Math.sin(frame * 0.012 + h.offset) * (isMobile ? 0.08 : 0.8);
 
       if (h.y > canvas.height + 20) {
         h.y = h.originalY;
         h.x = h.originalX;
       }
 
-      drawHeart(h.x, h.y, h.size + (isMobile ? 0.2 : 1), h.color);
+      drawHeart(h.x, h.y, h.size + (isMobile ? 0.1 : 1), h.color);
     } else {
       drawHeart(h.x + waveX, h.y + waveY, h.size, h.color);
     }
