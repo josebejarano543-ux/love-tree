@@ -58,7 +58,7 @@ function createHearts() {
   const centerX = canvas.width / 2;
   const centerY = isMobile ? canvas.height / 2 - 40 : canvas.height / 2 - 70;
 
-  const scale = isMobile ? 7.8 : 13;
+  const scale = isMobile ? 14 : 16;
   const totalHearts = isMobile ? 340 : 650;
 
   for (let i = 0; i < totalHearts; i++) {
@@ -75,7 +75,7 @@ function createHearts() {
       originalX: x,
       originalY: y,
       size: isMobile
-        ? Math.random() * 2.8 + 2.8
+        ? Math.random() * 10+ 10
         : Math.random() * 3.5 + 2.8,
       color: colors[Math.floor(Math.random() * colors.length)],
       offset: Math.random() * 100,
